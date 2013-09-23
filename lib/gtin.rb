@@ -68,6 +68,32 @@ class GTIN
       "GS1 Bulgaria"
     when 383
       "GS1 Slovenija"
+    when 385
+      "GS1 Croatia"
+    when 387
+      "GS1 BIH (Bosnia-Herzegovina)"
+    when 389
+      "GS1 Montenegro"
+    when 400..440
+      "GS1 Germany"
+    when 450..459, 490..499
+      "GS1 Japan"
+    when 460..469
+      "GS1 Russia"
+    when 470
+      "GS1 Kyrgyzstan"
+    when 471
+      "GS1 Taiwan"
+    when 474
+      "GS1 Estonia"
+    when 475
+      "GS1 Latvia"
+    when 476
+      "GS1 Azerbaijan"
+    when 690..699
+      "GS1 China"
+    when 729
+      "GS1 Israel"
     when 978..979
       "Bookland"
     else
