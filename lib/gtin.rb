@@ -90,6 +90,44 @@ class GTIN
       "GS1 Latvia"
     when 476
       "GS1 Azerbaijan"
+    when 477
+      "GS1 Lithuania"
+    when 478
+      "GS1 Uzbekistan"
+    when 479
+      "GS1 Sri Lanka"
+    when 480
+      "GS1 Philippines"
+    when 481
+      "GS1 Belarus"
+    when 482
+      "GS1 Ukraine"
+    when 484
+      "GS1 Moldova"
+    when 485
+      "GS1 Armenia"
+    when 486
+      "GS1 Georgia"
+    when 487
+      "GS1 Kazakstan"
+    when 488
+      "GS1 Tajikistan"
+    when 489
+      "GS1 Hong Kong"
+    when 500..509
+      "GS1 UK"
+    when 520..521
+      "GS1 Association Greece"
+    when 528
+      "GS1 Lebanon"
+    when 529
+      "GS1 Cyprus"
+    when 530
+      "GS1 Albania"
+    when 531
+      "GS1 MAC (FYR Macedonia)"
+    when 535
+      "GS1 Malta"
     when 690..699
       "GS1 China"
     when 729
