@@ -30,7 +30,13 @@ gtin = GTIN.new("299265108631")
 gtin.variable?   # true
 gtin.restricted? # true
 gtin.price       # 8.63
-gtin.base_gtin14 # "00299265000000"
+gtin.base_gtin14 # "00299265000003"
+```
+
+Calculate check digit
+
+```ruby
+GTIN.check_digit("01600027526") # "3"
 ```
 
 ## Installation

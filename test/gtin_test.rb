@@ -24,7 +24,8 @@ class TestGTIN < Minitest::Test
     assert gtin.variable?
     assert gtin.restricted?
     assert_equal 8.63, gtin.price
-    assert_equal "00299265000000", gtin.base_gtin14
+    assert_equal "00299265000003", gtin.base_gtin14
+    assert GTIN.new(gtin.base_gtin14).valid?
   end
 
 end
