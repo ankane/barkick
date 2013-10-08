@@ -2,6 +2,29 @@ class GTIN
 
   def initialize(number)
     @number = number.to_s
+
+    # could be upc-e
+    if @number.length == 8 and @number[0] == "0"
+      upc_a =
+        case @number[-2]
+        when "0"
+          "#{@number[1..2]}00000#{@number[3..5]}"
+        when "1", "2"
+          "#{@number[1..2]}#{@number[-2]}0000#{@number[3..5]}"
+        when "3"
+          "#{@number[1..3]}00000#{@number[4..5]}"
+        when "4"
+          "#{@number[1..4]}00000#{@number[5]}"
+        else
+          "#{@number[1..5]}0000#{@number[-2]}"
+        end
+
+      upc_a = "0#{upc_a}#{@number[-1]}"
+
+      if self.class.check_digit(upc_a[0..-2]) == @number[-1]
+        @number = upc_a
+      end
+    end
   end
 
   def gtin14
