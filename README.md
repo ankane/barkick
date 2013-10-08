@@ -33,6 +33,13 @@ gtin.price       # 8.63
 gtin.base_gtin14 # "00299265000003"
 ```
 
+UPC-E
+
+```ruby
+gtin = GTIN.new("03744806")
+gtin.base_gtin14 # "00037000004486"
+```
+
 Calculate check digit
 
 ```ruby
