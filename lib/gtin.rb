@@ -4,7 +4,7 @@ class GTIN
     @number = number.to_s
 
     # could be upc-e
-    if @number.length == 8 and @number[0] == "0"
+    if @number.length == 8 and @number[0] == "0" and @number[1] != "0"
       upc_a =
         case @number[-2]
         when "0"
