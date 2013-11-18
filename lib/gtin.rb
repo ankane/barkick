@@ -159,6 +159,19 @@ class GTIN
     end
   end
 
+  def country_code
+    case prefix_name
+    when "GS1 US"
+      "US"
+    when "GS1 UK"
+      "GB"
+    when "GS1 Germany"
+      "DE"
+    else
+      nil
+    end
+  end
+
   def book?
     prefix_name == "Bookland"
   end
