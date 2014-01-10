@@ -77,7 +77,11 @@ class GTIN
   def prefix_name
     case prefix.to_i
     when 0..19, 30..39, 60..139
-      "GS1 US"
+      if @number.length == 8
+        nil # GTIN-8
+      else
+        "GS1 US"
+      end
     when 20..29, 40..49, 200..299
       "Restricted distribution"
     when 50..59
