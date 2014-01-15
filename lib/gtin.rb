@@ -206,14 +206,13 @@ class GTIN
 
   def country_code
     case prefix_name
-    when "GS1 US"
-      "US"
-    when "GS1 UK"
-      "GB"
-    when "GS1 Germany"
-      "DE"
-    else
-      nil
+    when "GS1 US" then "US"
+    when "GS1 UK" then "GB"
+    when "GS1 Germany" then "DE"
+    when "GS1 Netherlands" then "NL"
+    when "GS1 Schweiz, Suisse, Svizzera" then "CH"
+    when "GS1 Italy" then "IT"
+    when "GS1 France" then "FR"
     end
   end
 
