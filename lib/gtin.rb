@@ -72,7 +72,6 @@ class GTIN
     gtin14[1..3]
   end
 
-  # TODO finish prefix list
   # http://www.gs1.org/barcodes/support/prefix_list
   def prefix_name
     case prefix.to_i
@@ -82,84 +81,126 @@ class GTIN
       else
         "GS1 US"
       end
-    when 20..29, 40..49, 200..299
-      "Restricted distribution"
-    when 50..59
-      "Coupons"
-    when 300..379
-      "GS1 France"
-    when 380
-      "GS1 Bulgaria"
-    when 383
-      "GS1 Slovenija"
-    when 385
-      "GS1 Croatia"
-    when 387
-      "GS1 BIH (Bosnia-Herzegovina)"
-    when 389
-      "GS1 Montenegro"
-    when 400..440
-      "GS1 Germany"
-    when 450..459, 490..499
-      "GS1 Japan"
-    when 460..469
-      "GS1 Russia"
-    when 470
-      "GS1 Kyrgyzstan"
-    when 471
-      "GS1 Taiwan"
-    when 474
-      "GS1 Estonia"
-    when 475
-      "GS1 Latvia"
-    when 476
-      "GS1 Azerbaijan"
-    when 477
-      "GS1 Lithuania"
-    when 478
-      "GS1 Uzbekistan"
-    when 479
-      "GS1 Sri Lanka"
-    when 480
-      "GS1 Philippines"
-    when 481
-      "GS1 Belarus"
-    when 482
-      "GS1 Ukraine"
-    when 484
-      "GS1 Moldova"
-    when 485
-      "GS1 Armenia"
-    when 486
-      "GS1 Georgia"
-    when 487
-      "GS1 Kazakstan"
-    when 488
-      "GS1 Tajikistan"
-    when 489
-      "GS1 Hong Kong"
-    when 500..509
-      "GS1 UK"
-    when 520..521
-      "GS1 Association Greece"
-    when 528
-      "GS1 Lebanon"
-    when 529
-      "GS1 Cyprus"
-    when 530
-      "GS1 Albania"
-    when 531
-      "GS1 MAC (FYR Macedonia)"
-    when 535
-      "GS1 Malta"
-    when 690..699
-      "GS1 China"
-    when 729
-      "GS1 Israel"
-    when 978..979
-      "Bookland"
-    else
-      nil
+    when 20..29, 40..49, 200..299 then "Restricted distribution"
+    when 50..59 then "Coupons"
+    when 300..379 then "GS1 France"
+    when 380 then "GS1 Bulgaria"
+    when 383 then "GS1 Slovenija"
+    when 385 then "GS1 Croatia"
+    when 387 then "GS1 BIH (Bosnia-Herzegovina)"
+    when 389 then "GS1 Montenegro"
+    when 400..440 then "GS1 Germany"
+    when 450..459, 490..499 then "GS1 Japan"
+    when 460..469 then "GS1 Russia"
+    when 470 then "GS1 Kyrgyzstan"
+    when 471 then "GS1 Taiwan"
+    when 474 then "GS1 Estonia"
+    when 475 then "GS1 Latvia"
+    when 476 then "GS1 Azerbaijan"
+    when 477 then "GS1 Lithuania"
+    when 478 then "GS1 Uzbekistan"
+    when 479 then "GS1 Sri Lanka"
+    when 480 then "GS1 Philippines"
+    when 481 then "GS1 Belarus"
+    when 482 then "GS1 Ukraine"
+    when 484 then "GS1 Moldova"
+    when 485 then "GS1 Armenia"
+    when 486 then "GS1 Georgia"
+    when 487 then "GS1 Kazakstan"
+    when 488 then "GS1 Tajikistan"
+    when 489 then "GS1 Hong Kong"
+    when 500..509 then "GS1 UK"
+    when 520..521 then "GS1 Association Greece"
+    when 528 then "GS1 Lebanon"
+    when 529 then "GS1 Cyprus"
+    when 530 then "GS1 Albania"
+    when 531 then "GS1 MAC (FYR Macedonia)"
+    when 535 then "GS1 Malta"
+    when 539 then "GS1 Ireland"
+    when 540..549 then "GS1 Belgium & Luxembourg"
+    when 560 then "GS1 Portugal"
+    when 569 then "GS1 Iceland"
+    when 570..579 then "GS1 Denmark"
+    when 590 then "GS1 Poland"
+    when 594 then "GS1 Romania"
+    when 599 then "GS1 Hungary"
+    when 600..601 then "GS1 South Africa"
+    when 603 then "GS1 Ghana"
+    when 604 then "GS1 Senegal"
+    when 608 then "GS1 Bahrain"
+    when 609 then "GS1 Mauritius"
+    when 611 then "GS1 Morocco"
+    when 613 then "GS1 Algeria"
+    when 615 then "GS1 Nigeria"
+    when 616 then "GS1 Kenya"
+    when 618 then "GS1 Ivory Coast"
+    when 619 then "GS1 Tunisia"
+    when 620 then "GS1 Tanzania"
+    when 621 then "GS1 Syria"
+    when 622 then "GS1 Egypt"
+    when 623 then "GS1 Brunei"
+    when 624 then "GS1 Libya"
+    when 625 then "GS1 Jordan"
+    when 626 then "GS1 Iran"
+    when 627 then "GS1 Kuwait"
+    when 628 then "GS1 Saudi Arabia"
+    when 629 then "GS1 Emirates"
+    when 640..649 then "GS1 Finland"
+    when 690..699 then "GS1 China"
+    when 700..709 then "GS1 Norway"
+    when 729 then "GS1 Israel"
+    when 730..739 then "GS1 Sweden"
+    when 740 then "GS1 Guatemala"
+    when 741 then "GS1 El Salvador"
+    when 742 then "GS1 Honduras"
+    when 743 then "GS1 Nicaragua"
+    when 744 then "GS1 Costa Rica"
+    when 745 then "GS1 Panama"
+    when 746 then "GS1 Republica Dominicana"
+    when 750 then "GS1 Mexico"
+    when 754..755 then "GS1 Canada"
+    when 759 then "GS1 Venezuela"
+    when 760..769 then "GS1 Schweiz, Suisse, Svizzera"
+    when 770..771 then "GS1 Colombia"
+    when 773 then "GS1 Uruguay"
+    when 775 then "GS1 Peru"
+    when 777 then "GS1 Bolivia"
+    when 778..779 then "GS1 Argentina"
+    when 780 then "GS1 Chile"
+    when 784 then "GS1 Paraguay"
+    when 786 then "GS1 Ecuador"
+    when 789..790 then "GS1 Brasil"
+    when 800..839 then "GS1 Italy"
+    when 840..849 then "GS1 Spain"
+    when 850 then "GS1 Cuba"
+    when 858 then "GS1 Slovakia"
+    when 859 then "GS1 Czech"
+    when 860 then "GS1 Serbia"
+    when 865 then "GS1 Mongolia"
+    when 867 then "GS1 North Korea"
+    when 868..869 then "GS1 Turkey"
+    when 870..879 then "GS1 Netherlands"
+    when 880 then "GS1 South Korea"
+    when 884 then "GS1 Cambodia"
+    when 885 then "GS1 Thailand"
+    when 888 then "GS1 Singapore"
+    when 890 then "GS1 India"
+    when 893 then "GS1 Vietnam"
+    when 896 then "GS1 Pakistan"
+    when 899 then "GS1 Indonesia"
+    when 900..919 then "GS1 Austria"
+    when 930..939 then "GS1 Australia"
+    when 940..949 then "GS1 New Zealand"
+    when 950 then "GS1 Global Office"
+    when 951 then "GS1 Global Office (EPCglobal)"
+    when 955 then "GS1 Malaysia"
+    when 958 then "GS1 Macau"
+    when 960..969 then "Global Office (GTIN-8s)"
+    when 977 then "Serial publications (ISSN)"
+    when 978..979 then "Bookland"
+    when 980 then "Refund receipts"
+    when 981..984 then "GS1 coupon identification for common currency areas"
+    when 990..999 then "GS1 coupon identification"
     end
   end
 
