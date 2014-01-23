@@ -34,6 +34,12 @@ class TestGTIN < Minitest::Test
     assert_equal "00037000004486", gtin.base_gtin14
   end
 
+  def test_coke_upc_e
+    gtin = GTIN.new("04963406")
+    assert gtin.valid?
+    assert_equal "00049000006346", gtin.base_gtin14
+  end
+
   def test_trader_joes
     gtin = GTIN.new("00511292")
     assert_equal "00000000511292", gtin.gtin14
