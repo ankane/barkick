@@ -28,7 +28,7 @@ class GTIN
   end
 
   def gtin14
-    if [8, 12, 13, 14].include?(@number.length)
+    if valid?
       @number.rjust(14, "0")
     else
       nil
@@ -50,11 +50,7 @@ class GTIN
   end
 
   def valid?
-    if gtin14
-      self.class.check_digit(gtin14[0..-2]) == check_digit
-    else
-      false
-    end
+    @number =~ /\A\d{8}(\d{4,6})?\z/ && self.class.check_digit(@number.rjust(14, "0")[0..-2]) == @number[-1]
   end
 
   def base_gtin14

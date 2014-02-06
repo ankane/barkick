@@ -16,6 +16,7 @@ class TestGTIN < Minitest::Test
 
   def test_invalid
     assert !GTIN.new("1").valid?
+    assert !GTIN.new(" 016000275263").valid?
   end
 
   def test_variable
