@@ -1,7 +1,6 @@
 require_relative "test_helper"
 
 class TestGTIN < Minitest::Test
-
   def test_gtin
     gtin = GTIN.new("016000275263")
     assert gtin.valid?
@@ -45,5 +44,4 @@ class TestGTIN < Minitest::Test
     gtin = GTIN.new("00511292")
     assert_equal "00000000511292", gtin.gtin14
   end
-
 end

@@ -1,10 +1,9 @@
 class GTIN
-
   def initialize(number)
     @number = number.to_s
 
     # could be upc-e
-    if @number.length == 8 and @number[0] == "0" and @number[1] != "0"
+    if @number.length == 8 && @number[0] == "0" && @number[1] != "0"
       upc_a =
         case @number[-2]
         when "0"
@@ -240,7 +239,7 @@ class GTIN
       # http://www.gs1.org/barcodes/support/check_digit_calculator#how
       digits = number.rjust(13, "0").split("").map(&:to_i)
       # digit at position 0 is odd (first digit) for the purpose of this calculation
-      odd_digits, even_digits = digits.partition.each_with_index{|digit, i| i.even? }
+      odd_digits, even_digits = digits.partition.each_with_index { |_digit, i| i.even? }
       ((10 - (sum(odd_digits) * 3 + sum(even_digits)) % 10) % 10).to_s
     else
       nil
@@ -248,7 +247,6 @@ class GTIN
   end
 
   def self.sum(arr)
-    arr.inject{|sum,x| sum + x }
+    arr.inject { |sum, x| sum + x }
   end
-
 end
