@@ -4,10 +4,10 @@ Barcodes made easy
 
 Works with:
 
-- [UPC](http://en.wikipedia.org/wiki/Universal_Product_Code)
-- [EAN](http://en.wikipedia.org/wiki/International_Article_Number_%28EAN%29)
-- [GTIN](http://en.wikipedia.org/wiki/Global_Trade_Item_Number)
-- [ISBN](http://en.wikipedia.org/wiki/International_Standard_Book_Number)
+- [UPC](https://en.wikipedia.org/wiki/Universal_Product_Code)
+- [EAN](https://en.wikipedia.org/wiki/International_Article_Number_%28EAN%29)
+- [GTIN](https://en.wikipedia.org/wiki/Global_Trade_Item_Number)
+- [ISBN](https://en.wikipedia.org/wiki/International_Standard_Book_Number)
 
 For PLU codes, check out the [plu gem](https://github.com/ankane/plu)
 

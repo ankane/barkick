@@ -67,7 +67,7 @@ class GTIN
     gtin14[1..3]
   end
 
-  # http://www.gs1.org/barcodes/support/prefix_list
+  # https://www.gs1.org/barcodes/support/prefix_list
   def prefix_name
     case prefix.to_i
     when 0..19, 30..39, 60..139
@@ -236,7 +236,7 @@ class GTIN
   def self.check_digit(number)
     number = number.to_s
     if [7, 11, 12, 13].include?(number.length)
-      # http://www.gs1.org/barcodes/support/check_digit_calculator#how
+      # https://www.gs1.org/barcodes/support/check_digit_calculator#how
       digits = number.rjust(13, "0").split("").map(&:to_i)
       # digit at position 0 is odd (first digit) for the purpose of this calculation
       odd_digits, even_digits = digits.partition.each_with_index { |_digit, i| i.even? }
