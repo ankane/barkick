@@ -34,11 +34,18 @@ gtin.price       # 8.63
 gtin.base_gtin14 # "00299265000003"
 ```
 
-UPC-E
+UPC-E [master]
 
 ```ruby
-gtin = GTIN.new("03744806")
+gtin = GTIN.new("03744806", type: :upc_e)
 gtin.base_gtin14 # "00037000004486"
+```
+
+EAN-8 [master]
+
+```ruby
+gtin = GTIN.new("01234565", type: :ean8)
+gtin.base_gtin14 # "00000001234565"
 ```
 
 Calculate check digit
@@ -46,6 +53,8 @@ Calculate check digit
 ```ruby
 GTIN.check_digit("01600027526") # "3"
 ```
+
+> For UPC-E, convert to UPC-A before passing to this method
 
 ## Installation
 
