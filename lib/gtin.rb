@@ -2,28 +2,35 @@ class GTIN
   def initialize(number, type: nil)
     @number = number.to_s
 
-    # could be upc-e
-    if @number.length == 8 && @number[0] == "0" && (@number[1] != "0" || type == :upc_e) && type != :ean8
-      upc_a =
-        case @number[-2]
-        when "0"
-          "#{@number[1..2]}00000#{@number[3..5]}"
-        when "1", "2"
-          "#{@number[1..2]}#{@number[-2]}0000#{@number[3..5]}"
-        when "3"
-          "#{@number[1..3]}00000#{@number[4..5]}"
-        when "4"
-          "#{@number[1..4]}00000#{@number[5]}"
-        else
-          "#{@number[1..5]}0000#{@number[-2]}"
+    if @number.length == 8
+      # bad default, but legacy
+      # Trader Joe's uses EAN-8 that start with 00
+      type ||= @number[0] == "0" && @number[1] != "0" ? :upc_e : :ean8
+
+      if type == :upc_e
+        upc_a =
+          case @number[-2]
+          when "0"
+            "#{@number[1..2]}00000#{@number[3..5]}"
+          when "1", "2"
+            "#{@number[1..2]}#{@number[-2]}0000#{@number[3..5]}"
+          when "3"
+            "#{@number[1..3]}00000#{@number[4..5]}"
+          when "4"
+            "#{@number[1..4]}00000#{@number[5]}"
+          else
+            "#{@number[1..5]}0000#{@number[-2]}"
+          end
+
+        upc_a = "0#{upc_a}#{@number[-1]}"
+
+        if self.class.check_digit(upc_a[0..-2]) == @number[-1]
+          @number = upc_a
         end
-
-      upc_a = "0#{upc_a}#{@number[-1]}"
-
-      if self.class.check_digit(upc_a[0..-2]) == @number[-1]
-        @number = upc_a
       end
     end
+
+    @type = type
   end
 
   def gtin14
@@ -71,7 +78,7 @@ class GTIN
   def prefix_name
     case prefix.to_i
     when 0..19, 30..39, 60..139
-      if @number.length == 8
+      if @type == :ean8
         nil # GTIN-8
       else
         "GS1 US"
