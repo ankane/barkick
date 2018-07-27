@@ -1,9 +1,9 @@
 class GTIN
-  def initialize(number)
+  def initialize(number, type: nil)
     @number = number.to_s
 
     # could be upc-e
-    if @number.length == 8 && @number[0] == "0" && @number[1] != "0"
+    if @number.length == 8 && @number[0] == "0" && (@number[1] != "0" || type == :upc_e) && type != :ean8
       upc_a =
         case @number[-2]
         when "0"

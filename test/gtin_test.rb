@@ -44,4 +44,14 @@ class TestGTIN < Minitest::Test
     gtin = GTIN.new("00511292")
     assert_equal "00000000511292", gtin.gtin14
   end
+
+  def test_ean8
+    gtin = GTIN.new("96385074")
+    assert_equal "00000096385074", gtin.gtin14
+  end
+
+  def test_upc_e_double_zero
+    gtin = GTIN.new("00985234", type: :upc_e)
+    assert_equal "00009800000524", gtin.gtin14
+  end
 end
