@@ -1,6 +1,6 @@
 require_relative "test_helper"
 
-class TestBarkick < Minitest::Test
+class BarkickTest < Minitest::Test
   def test_gtin
     gtin = Barkick::GTIN.new("016000275263")
     assert gtin.valid?
