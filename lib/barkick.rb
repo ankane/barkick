@@ -1,2 +1,2 @@
+require "barkick/gtin"
 require "barkick/version"
-require "gtin"
