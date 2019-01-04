@@ -11,6 +11,14 @@ Works with:
 
 For PLU codes, check out the [plu gem](https://github.com/ankane/plu)
 
+## Installation
+
+Add this line to your Gemfile:
+
+```ruby
+gem 'barkick'
+```
+
 ## How To Use
 
 ```ruby
@@ -55,20 +63,6 @@ Barkick::GTIN.check_digit("01600027526") # "3"
 ```
 
 > For UPC-E, convert to UPC-A before passing to this method
-
-## Installation
-
-Add this line to your Gemfile:
-
-```ruby
-gem 'barkick'
-```
-
-And run:
-
-```sh
-bundle
-```
 
 ## Upgrading
 
