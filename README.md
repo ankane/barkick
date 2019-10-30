@@ -64,6 +64,10 @@ Barkick::GTIN.check_digit("01600027526") # "3"
 
 > For UPC-E, convert to UPC-A before passing to this method
 
+## Resources
+
+- [GS1 General Specifications](https://www.gs1.org/docs/barcodes/GS1_General_Specifications.pdf)
+
 ## Upgrading
 
 ### 0.1.0
