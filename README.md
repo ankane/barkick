@@ -18,7 +18,7 @@ For PLU codes, check out the [plu gem](https://github.com/ankane/plu)
 Add this line to your Gemfile:
 
 ```ruby
-gem 'barkick'
+gem "barkick"
 ```
 
 ## How To Use
