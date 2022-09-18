@@ -246,14 +246,10 @@ module Barkick
         digits = number.rjust(13, "0").split("").map(&:to_i)
         # digit at position 0 is odd (first digit) for the purpose of this calculation
         odd_digits, even_digits = digits.partition.each_with_index { |_digit, i| i.even? }
-        ((10 - (sum(odd_digits) * 3 + sum(even_digits)) % 10) % 10).to_s
+        ((10 - (odd_digits.sum * 3 + even_digits.sum) % 10) % 10).to_s
       else
         nil
       end
-    end
-
-    def self.sum(arr)
-      arr.inject { |sum, x| sum + x }
     end
   end
 end
