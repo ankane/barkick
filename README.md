@@ -11,7 +11,7 @@ Works with:
 
 For PLU codes, check out the [plu gem](https://github.com/ankane/plu)
 
-[![Build Status](https://github.com/ankane/barkick/workflows/build/badge.svg?branch=master)](https://github.com/ankane/barkick/actions)
+[![Build Status](https://github.com/ankane/barkick/actions/workflows/build.yml/badge.svg)](https://github.com/ankane/barkick/actions)
 
 ## Installation
 
