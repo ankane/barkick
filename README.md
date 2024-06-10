@@ -70,15 +70,6 @@ Barkick::GTIN.check_digit("01600027526") # "3"
 
 - [GS1 General Specifications](https://www.gs1.org/docs/barcodes/GS1_General_Specifications.pdf)
 
-## Upgrading
-
-### 0.1.0
-
-There a few breaking changes to be aware of:
-
-- `GTIN` is now `Barkick::GTIN`
-- 8-digit codes now raise an `ArgumentError` if `type` is not specified
-
 ## History
 
 View the [changelog](https://github.com/ankane/barkick/blob/master/CHANGELOG.md)
