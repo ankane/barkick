@@ -1,4 +1,4 @@
-## 0.3.1 (unreleased)
+## 0.3.1 (2025-01-30)
 
 - Fixed `valid?` method returning `nil` instead of `false` in some cases
 
