@@ -55,7 +55,7 @@ module Barkick
     end
 
     def valid?
-      @number =~ /\A\d{8}(\d{4,6})?\z/ && self.class.check_digit(@number.rjust(14, "0")[0..-2]) == @number[-1]
+      @number.match?(/\A\d{8}(\d{4,6})?\z/) && self.class.check_digit(@number.rjust(14, "0")[0..-2]) == @number[-1]
     end
 
     def base_gtin14
