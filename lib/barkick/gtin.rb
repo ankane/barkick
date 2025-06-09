@@ -107,7 +107,7 @@ module Barkick
       when 484 then "GS1 Moldova"
       when 485 then "GS1 Armenia"
       when 486 then "GS1 Georgia"
-      when 487 then "GS1 Kazakstan"
+      when 487 then "GS1 Kazakhstan"
       when 488 then "GS1 Tajikistan"
       when 489 then "GS1 Hong Kong"
       when 500..509 then "GS1 UK"
