@@ -1,3 +1,7 @@
+## 0.4.0 (unreleased)
+
+- Dropped support for Ruby < 3.3
+
 ## 0.3.1 (2025-01-30)
 
 - Fixed `valid?` method returning `nil` instead of `false` in some cases
